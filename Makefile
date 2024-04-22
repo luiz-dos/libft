@@ -49,7 +49,7 @@ BONUS		= ft_lstadd_front.c \
 				ft_lstclear.c \
 				ft_lstiter.c \
 				ft_lstmap.c \
-				del.c \
+				delete.c \
 				print_content.c \
 
 BONUS_OBJS	= ${BONUS:.c=.o}
