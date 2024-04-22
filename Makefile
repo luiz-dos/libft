@@ -40,6 +40,19 @@ SRCS		= ft_atoi.c \
 				ft_toupper.c \
 				
 OBJS		= ${SRCS:.c=.o}
+BONUS		= ft_lstadd_front.c \
+				ft_lstlast.c \
+				ft_lstnew.c \
+				ft_lstsize.c \
+				ft_lstadd_back.c \
+				ft_lstdelone.c \
+				ft_lstclear.c \
+				ft_lstiter.c \
+				ft_lstmap.c \
+				del.c \
+				print_content.c \
+
+BONUS_OBJS	= ${BONUS:.c=.o}
 
 %.o: %.c
 	${CC} ${CFLAGS} -c $< -o $@
@@ -51,11 +64,15 @@ ${NAME}: ${OBJS}
 all: ${NAME}
 
 clean:
-	${RM} ${OBJS}
+	${RM} ${OBJS} ${BONUS_OBJS}
 
 fclean: clean
 	${RM} ${NAME}
 
 re: fclean all
 
-.PHONY: all, clean, fclean, re
+bonus: ${OBJS} ${BONUS_OBJS}
+	${CREATE} ${NAME} ${OBJS} ${BONUS_OBJS}
+	${INDEXLIB} ${NAME}
+
+.PHONY: all, clean, fclean, re, bonus
