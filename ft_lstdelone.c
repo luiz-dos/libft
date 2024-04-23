@@ -19,13 +19,13 @@ as a parameter and free the node. The memory of
 lst: The node to free.
 del: The address of the function used to delete the content. */
 
-void    ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-    if(!lst)
-        return ;
-    if(del)
-    {
-        del(lst->content);
-        free(lst);
-    }
+	if (!lst)
+		return ;
+	if (del)
+	{
+		del(lst->content);
+		free(lst);
+	}
 }

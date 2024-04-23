@@ -13,27 +13,27 @@
 #include "libft.h"
 #include <stdio.h>
 
-/* Deletes and frees the given node and every successor 
+/* Deletes and frees the given node and every successor
 of that node, using the function ’del’ and free(3).
 Finally, the pointer to the list must be set to NULL.
 lst: The address of a pointer to a node.
-del: The address of the function used to delete the content 
+del: The address of the function used to delete the content
 of the node. */
-void    ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-    t_list  *current;
-    t_list  *next;
+	t_list	*current;
+	t_list	*next;
 
-    if (*lst == NULL)
-        return ;
-    current = *lst;
-    while (current != NULL)
-    {
-        next = current->next;
-        if (del)
-            del(current->content);
-        free(current);
-        current = next;
-    }
-    *lst = NULL;
+	if (*lst == NULL)
+		return ;
+	current = *lst;
+	while (current != NULL)
+	{
+		next = current->next;
+		if (del)
+			del(current->content);
+		free(current);
+		current = next;
+	}
+	*lst = NULL;
 }

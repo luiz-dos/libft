@@ -1,6 +1,16 @@
 #include "libft.h"
 #include <stdio.h>
 
+static void	ft_delete(void *node)
+{
+    free((t_list *)node);
+}
+
+static void	ft_print_content(void  *content)
+{
+	printf("%s\n", (char *)content);
+}
+
 static void	*ft_toupper_v2(void *content)
 {
 	char	*str;
