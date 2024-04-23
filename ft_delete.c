@@ -1,12 +1,6 @@
 #include "libft.h"
 
-void    ft_delete(void *content)
+void    ft_delete(void *node)
 {
-    t_list  *node;
-
-    if(content)
-    {
-        node = (t_list *)content;
-        free(node);
-    }
+    free((t_list *)node);
 }

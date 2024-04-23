@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 /* Adds the node ’new’ at the beginning of the list.
 lst: The address of a pointer to the first link of a list.
@@ -19,15 +20,4 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	new->next = *lst;
 	*lst = new;
-}
-int	main(void)
-{
-	t_list	*list;
-
-	list = ft_lstnew("Luiz");
-	ft_lstadd_front(&list, ft_lstnew("Henrique"));
-	ft_lstadd_front(&list, ft_lstnew("Maciel"));
-	ft_lstadd_back(&list, ft_lstnew("Joao"));
-	ft_lstiter(list, print_content);
-	return (0);
 }
