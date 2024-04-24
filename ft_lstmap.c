@@ -27,20 +27,24 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*current;
 	void	*new_content;
 
-	new_list = NULL;
-	new_content = NULL;
-	current = lst;
-	while (current)
+	if (lst && f && del)
 	{
-		new_content = f(current->content);
-		new_node = ft_lstnew(new_content);
-		if (!new_node)
+		new_list = NULL;
+		new_content = NULL;
+		current = lst;
+		while (current)
 		{
-			ft_lstclear(&new_list, del);
-			return (NULL);
+			new_content = f(current->content);
+			new_node = ft_lstnew(new_content);
+			if (!new_node)
+			{
+				ft_lstclear(&new_list, del);
+				return (NULL);
+			}
+			ft_lstadd_back(&new_list, new_node);
+			current = current->next;
 		}
-		ft_lstadd_back(&new_list, new_node);
-		current = current->next;
+		return (new_list);
 	}
-	return (new_list);
+	return (NULL);
 }

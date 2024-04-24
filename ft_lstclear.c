@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 /* Deletes and frees the given node and every successor
 of that node, using the function ’del’ and free(3).
@@ -24,16 +23,16 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*current;
 	t_list	*next;
 
-	if (*lst == NULL)
-		return ;
-	current = *lst;
-	while (current != NULL)
+	if (lst && del)
 	{
-		next = current->next;
-		if (del)
+		current = *lst;
+		while (current != NULL)
+		{
+			next = current->next;
 			del(current->content);
-		free(current);
-		current = next;
+			free(current);
+			current = next;
+		}
+		*lst = NULL;
 	}
-	*lst = NULL;
 }

@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-/*The strcmp() function compares the two strings s1 and s2.
+/* The strcmp() function compares the two strings s1 and s2.
 The comparison is done using unsigned characters.
 
 if s1 is greater, it returns an integer greater than 0. 
 if it is smaller, it returns an integer less than 0 and 
-if s1 and s2 are equal, it returns 0.*/
+if s1 and s2 are equal, it returns 0. */
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned char	p1;

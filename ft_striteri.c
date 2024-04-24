@@ -12,19 +12,22 @@
 
 #include "libft.h"
 
-/*Applies the function ’f’ on each character of the string passed as argument, 
-passing its index as first argument. Each character is passed by address to ’f’ 
-to be modified if necessary*/
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+/* Applies the function ’f’ on each character of the string passed as argument,
+passing its index as first argument. Each character is passed by address to ’f’
+to be modified if necessary */
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	size_t	i;
 	size_t	len_s;
 
-	i = 0;
-	len_s = ft_strlen(s);
-	while (i < len_s)
+	if (s && f)
 	{
-		f(i, &s[i]);
-		i++;
+		i = 0;
+		len_s = ft_strlen(s);
+		while (i < len_s)
+		{
+			f(i, &s[i]);
+			i++;
+		}
 	}
 }

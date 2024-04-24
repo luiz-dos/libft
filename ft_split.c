@@ -97,11 +97,15 @@ char	**ft_split(char const *s, char c)
 {
 	char	**array_str;
 
-	array_str = (char **)malloc((ft_count_str((char *)s, c) + 1)
-			* sizeof(char *));
-	if (!array_str)
-		return (NULL);
-	if ((fill_array(array_str, s, c)) == 0)
-		return (NULL);
-	return (array_str);
+	if (s)
+	{
+		array_str = (char **)malloc((ft_count_str((char *)s, c) + 1)
+				* sizeof(char *));
+		if (!array_str)
+			return (NULL);
+		if ((fill_array(array_str, s, c)) == 0)
+			return (NULL);
+		return (array_str);
+	}
+	return (NULL);
 }

@@ -21,9 +21,7 @@ del: The address of the function used to delete the content. */
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!lst)
-		return ;
-	if (del)
+	if (lst && del)
 	{
 		del(lst->content);
 		free(lst);

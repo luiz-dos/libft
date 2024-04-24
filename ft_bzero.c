@@ -13,14 +13,19 @@
 #include "libft.h"
 
 /*Man
-The  bzero() function erases the data in the n bytes of the memory 
-starting at the location pointed to by s, by writing zeros 
+The	bzero(void) function erases the data in the n bytes of the memory
+starting at the location pointed to by s, by writing zeros
 (bytes  containing '\0') to that area.*/
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*p;
+	char	*p;
+	size_t	i;
 
-	p = (unsigned char *)s;
-	while (n-- > 0)
-		*p++ = 0;
+	i = 0;
+	p = (char *)s;
+	while (i < n)
+	{
+		p[i] = 0;
+		i++;
+	}
 }
