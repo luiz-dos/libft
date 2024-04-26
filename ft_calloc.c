@@ -12,12 +12,9 @@
 
 #include "libft.h"
 
-/*The calloc() function allocates memory for an array of nmemb elements
+/* The calloc() function allocates memory for an array of nmemb elements
 of size bytes each and returns a pointer to the allocated memory.
-The memory is set to zero.
-If nmemb or size is 0, then calloc() returns either NULL.
-If the multiplication of nmemb and size would result in integer  overflow,
-then	calloc(void) returns an error. */
+The memory is set to zero. */
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*array;
